@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Technology learning resource about PC parts and hardware.">
+    <meta name="keywords" content="HTML,CSS,Tech,technology,computer parts,CPU,GPU,hardware">
+    <meta name="author" content="Axcel Anthony Ortiz Pérez">
+    <title>Gear-in-Fo | Contact</title>
+    <link rel="stylesheet" href="StyleSheet1.css" />
+</head>
+
+
+
+<header>
+
+    <h1>Welcome to Gear-in-Fo.</h1>
+    <h3>The center to learn and understand different tech related parts and more.</h3>
+    <h4>About and Contact</h4>
+
+
+
+    <nav>
+        <ul>
+            <li><a href="MainPage.html">Home</a></li>
+            <li><a href="Parts, Specs, and More.html">Parts</a></li>
+            <li><a href="Full builds.html">Trust worthy companies </a></li>
+        </ul>
+    </nav>
+
+
+</header>
+
+<body>
+
+    <main role="main" id="Home">
+
+        <section id="Contact">
+
+            <h2>Want to Stay updated?</h2>
+
+            <p>Sign up to stay updated with all things tech related!</p>
+
+            <hr />
+
+            <!--INTERACTIVE FORM-->
+
+            <form id="ContactForm" aria-label="Sign Up" novalidate>
+
+                <h3>Sign Up</h3>
+
+
+
+                <!--Complete Name-->
+
+                <label for="name">
+
+                    Full name: <span style="color: var(--color-error);">*</span>
+
+                </label>
+
+                <input type="text"
+                       id="name"
+                       name="name"
+                       placeholder="Your full name here"
+                       required
+                       aria-required="true"
+                       aria-describedby="nombre-error" />
+
+                <div id="nombre-error" class="error-message" role="alert"></div>
+
+
+
+                <!--Email-->
+
+                <label typeof="email">
+
+                    Email: <span style="color: var(--color-error);">*</span>
+
+                </label>
+
+                <input type="email"
+                       id="email"
+                       name="email"
+                       placeholder="Example@email.com"
+                       required
+                       aria-required="true"
+                       aria-describedby="correo-error" />
+
+                <div id="nombre-error" class="error-message" role="alert"></div>
+
+                <!--Area de texto-->
+                <label for="comentarios">Comments</label>
+                <textarea id="Comments"
+                          name="Comments"
+                          rows="4"
+                          placeholder="Give us feedback!"
+                          maxlength="500"></textarea>
+                <small style="color: var(--color-text-light); display: block; margin-top: 5px;">
+                    500 characters limit
+                </small>
+
+                <!--Botones-->
+                <div class="button-group">
+                    <button type="submit" id="submitBtn">
+                        Submit
+                    </button>
+                    <button type="button" class="btn-secondary" onclick="resetearFormulario()">
+                        Reset
+                    </button>
+                </div>
+
+                <hr />
+                
+                <p>
+                    You can contact us at GeainFo@gmail.com or at
+                    <a href="mailto:aaortiz703@gmail.com?" target="_top">
+                        aaortiz703@gmail.com
+                    </a>
+                </p>
+</main>
+    </form>
+    </section>
+
+</body>
+
+<footer>
+    <p><center>2025 Gear-in-Fo</center></p>
+    <p><center>2025 Universidad Interamericana de Puerto Rico - Recinto de Ponce</center></p>
+</footer>
+
+</html>

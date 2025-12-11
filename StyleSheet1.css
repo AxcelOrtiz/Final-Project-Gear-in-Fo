@@ -1,0 +1,673 @@
+﻿body
+<style >
+/* ===== RESET AND VARIABLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+
+
+:root {
+    --color-primary: #013220;
+    --color-primary-dark: #001f14;
+    --color-hover: #003366;
+    --color-success: #4caf50;
+    --color-error: #f44336;
+    --color-warning: #ff9800;
+    --color-text: #333;
+    --color-text-light: #555;
+    --color-bg: #f4f4f4;
+    --color-white: #ffffff;
+    --color-border: #ddd;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+
+
+/* ===== GENERAL STYLE ===== */
+
+h1, h2, h3, nav, p, button {
+    font-family: 'Anton', sans-serif;
+}
+
+body {
+    font-family: 'Anton', sans-serif;
+    background: linear-gradient(90deg, rgba(27, 3, 31, 1) 0%, rgba(84, 31, 97, 1) 50%, rgba(200, 0, 255, 1) 100%);
+    color: var(--color-text);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+/* ===== HEADER ===== */
+
+header {
+    background-image: url('hexa purple.jpg');
+    background-attachment: 100%;
+    background-size: 100%;
+    color: var(--color-white);
+    text-align: center;
+    padding: 5px 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+
+    header h1 {
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+
+
+/* ===== NAVEGATION ===== */
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #cb6ce6;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+    ul li a {
+        display: block;
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+
+
+        ul li a:hover {
+            background-color: #1b031f;
+        }
+
+nav a {
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+
+
+    nav a:hover,
+    nav a:focus {
+        background-color: (90deg, rgba(27, 3, 31, 1) 0%, rgba(84, 31, 97, 1) 50%, rgba(200, 0, 255, 1) 100%);
+        transform: translateY(-2px);
+    }
+
+
+
+/* ===== MAIN CONTENT ===== */
+
+main {
+    flex: 1;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+
+section {
+    background:;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    animation: slideUp 0.6s ease;
+}
+
+details {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem; /* larger font size */
+    font-weight: 600; /* semi-bold */
+    transition: color 0.3s ease;
+}
+
+    /* Add custom arrow using ::after */
+    summary::after {
+        content: "▶"; /* right-pointing arrow */
+        margin-left: 10px;
+        font-size: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    summary::-webkit-details-marker {
+        display: none;
+    }
+
+    summary h3 {
+        display: inline-block;
+        transition: var(--transition);
+    }
+
+details[open] summary h3 {
+    color: #cb6ce6;
+    transform: translateX(10px);
+}
+
+/* Rotate arrow when open */
+details[open] summary::after {
+    transform: rotate(90deg); /* points down when open */
+}
+
+/* Optional: hover effect on summary */
+summary:hover {
+    color: #cb6ce6; /* your purple accent color */
+}
+
+/* Paragraph animation inside details remains the same */
+details p {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+    padding-left: 15px;
+    margin-top: 5px;
+    transform: translateY(10px); /* initial offset for slide-up */
+}
+
+details[open] p {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+details p {
+    padding-left: 15px;
+    animation: fadeIn 0.5s ease;
+}
+
+details p {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+details[open] p {
+    max-height: 500px;
+    opacity: 1;
+}
+
+@keyframes fadeUp {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+details[open] p {
+    animation: fadeUp 0.5s ease;
+}
+
+
+
+@keyframes slideUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Anton', sans-serif;
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+
+
+h3 {
+    font-family: 'Anton', sans-serif;
+    color: white;
+    font-size: 1.4rem;
+    margin: 25px 0 15px;
+    border-left: 6px grey;
+}
+
+h4 {
+    font-family: 'Anton', sans-serif;
+    color: white;
+    font-size: 1.4rem;
+    margin: 25px 0 15px;
+    border-left: 6px grey;
+}
+
+p {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: white;
+    text-align: left;
+    animation: slideUp 0.7s ease;
+    border: 2px;
+    border-color: #d02ea1, border-radius: 5px;
+}
+
+
+
+hr {
+    border: none;
+    border-top: 2px solid var(--color-bg);
+    margin: 30px 0;
+}
+
+
+
+/* ===== FORM ===== */
+
+#ContactForm {
+    margin: 30px 0;
+}
+
+
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: var(--color-text);
+}
+
+
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Anton', sans-serif;
+    transition: var(--transition);
+}
+
+
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus {
+        outline: none;
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(1, 50, 32, 0.1);
+    }
+
+
+
+/* Validation states */
+
+.field-error {
+    border-color: var(--color-error) !important;
+}
+
+
+
+.field-success {
+    border-color: var(--color-success) !important;
+}
+
+
+
+.error-message {
+    color: var(--color-error);
+    font-size: 0.875rem;
+    margin-top: 5px;
+    display: none;
+}
+
+
+
+    .error-message.show {
+        display: block;
+    }
+
+
+
+/* Multiple select */
+
+select[multiple] {
+    padding: 8px;
+}
+
+
+
+/* Textarea */
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+
+/* Checkbox & Radio */
+
+.checkbox-wrapper,
+.radio-group {
+    margin: 15px 0;
+}
+
+
+
+    .checkbox-wrapper label,
+    .radio-group label {
+        display: inline-flex;
+        align-items: center;
+        font-weight: 400;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+
+
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+
+
+.radio-group p {
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+
+
+/* ===== BUTTONS ===== */
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+
+
+button {
+    background-color: #cb6ce6;
+    color: var(--color-white);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(1, 50, 32, 0.3);
+}
+
+
+
+    button:hover:not(:disabled) {
+        background: #cb6ce6;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(1, 50, 32, 0.4);
+    }
+
+
+
+    button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+
+
+/* ===== RESULT ===== */
+
+#resultado {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 8px;
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+
+
+    #resultado.success {
+        background-color: #e8f5e9;
+        border-left: 4px solid var(--color-success);
+    }
+
+
+
+    #resultado h4 {
+        color: var(--color-success);
+        margin-bottom: 15px;
+    }
+
+
+
+    #resultado p {
+        margin: 8px 0;
+        font-size: 0.95rem;
+    }
+
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* ===== IMAGE ===== */
+
+.demo-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin: 20px 0;
+    transition: var(--transition);
+}
+
+
+
+    .demo-image:hover {
+        transform: scale(1.02);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+
+
+.image-fallback {
+    display: none;
+    background-color: var(--color-bg);
+    padding: 40px;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+
+
+/* ===== FOOTER ===== */
+
+footer {
+    font-family: 'Anton', sans-serif;
+    background-image: url('hexa purple.jpg');
+    background-attachment: fixed;
+    background-size: auto;
+    color: var(--color-white);
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+    footer p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 1.3rem;
+        font-family: 'Anton', sans-serif;
+    }
+
+
+
+    nav {
+        gap: 10px;
+    }
+
+
+
+        nav a {
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+
+
+
+    section {
+        padding: 25px 20px;
+    }
+
+
+
+    h2 {
+        font-size: 1.5rem;
+        font-family: 'Anton', sans-serif;
+    }
+
+
+
+    .button-group {
+        flex-direction: column;
+    }
+
+
+
+    button {
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+
+    main {
+        padding: 20px 10px;
+    }
+
+
+
+    section {
+        padding: 20px 15px;
+    }
+}
+
+
+
+/* ===== ACCESSIBILITY ===== */
+
+*:focus-visible {
+    outline: 3px solid var(--color-hover);
+    outline-offset: 2px;
+}
+
+
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+</style >
+
+</head >
