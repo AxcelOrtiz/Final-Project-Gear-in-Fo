@@ -48,7 +48,7 @@ body {
 /* ===== HEADER ===== */
 
 header {
-    background-image: url('hexa purple.jpg');
+    background-image: url('Hexa purple.jpg');
     background-attachment: 100%;
     background-size: 100%;
     color: var(--color-white);
@@ -563,7 +563,7 @@ button {
 
 footer {
     font-family: 'Anton', sans-serif;
-    background-image: url('hexa purple.jpg');
+    background-image: url('Hexa purple.jpg');
     background-attachment: fixed;
     background-size: auto;
     color: var(--color-white);
@@ -671,3 +671,4 @@ footer {
 </style >
 
 </head >
+
